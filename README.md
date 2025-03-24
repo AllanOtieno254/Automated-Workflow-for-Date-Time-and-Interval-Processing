@@ -1,7 +1,8 @@
-# **Automated Workflow for Date, Time, and Interval Processing**
+![edit fields set node](https://github.com/user-attachments/assets/8e69db21-84a8-4bfc-a2f9-a852b5358e99)![if node](https://github.com/user-attachments/assets/e414ca12-cb5d-4cdd-95c5-9c5e939e8776)# **Automated Workflow for Date, Time, and Interval Processing**
 
 ## **Overview**
 This project demonstrates how to build an automated workflow in **n8n** that processes date and time data by adding five days to an input date from a **Customer Datastore** node. The workflow then checks if the calculated date occurs after 1959. If true, it waits for one minute before setting the final output value. The workflow is triggered every 30 minutes.
+![main workflow](https://github.com/user-attachments/assets/9d6974bf-893b-4033-9967-fb661a422286)
 
 ## **Workflow Objectives**
 - Retrieve all customer data.
@@ -20,9 +21,8 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 1. Insert a **Customer Datastore (n8n Training)** node.
 2. Choose the action **Get All People**.
 3. Select the option **Return All** to fetch all data.
-
+  ![customer datastore(n8n training)](https://github.com/user-attachments/assets/70c09b34-5f72-4cc2-9224-3cb1bb25cea4)
 ---
-![Uploading customer datastore(n8n training).png…]()
 
 ### **2️⃣ Add a Date & Time Node to Round the Date**
 1. Add a **Date & Time** node and connect it to the **Customer Datastore** node.
@@ -32,6 +32,7 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 5. Set the **To** option to `End of Month`.
 6. Name the output field as `new-date`.
 7. In **Options**, select `Add Option` → `Include Input Fields`.
+![Date and Time](https://github.com/user-attachments/assets/b21c31fe-03fe-44f1-8e67-b9aae0cd9246)
 
 ---
 
@@ -50,9 +51,10 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 1. Connect a **Wait node** to the **True output** of the **If node**.
 2. Set **Resume** to `After Time Interval`.
 3. Configure the following parameters:
+
    - **Wait Amount**: `1.00`
    - **Wait Unit**: `Minutes`
-
+![if node](https://github.com/user-attachments/assets/0e352d77-3a1c-4d1d-8a63-2d92991bc420)
 ---
 
 ### **5️⃣ Add an Edit Fields (Set) Node**
@@ -62,6 +64,9 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 4. Set its value to `new-date`.
 5. Select the option `Include Other Input Fields` → `Include All Fields`.
 
+![edit fields set node](https://github.com/user-attachments/assets/4f6be743-c0b9-42df-a999-2cbc75f00b61)
+
+
 ---
 
 ### **6️⃣ Add a Schedule Trigger Node**
@@ -69,6 +74,7 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 2. Set **Trigger Interval** to `Minutes`.
 3. Configure **Minutes Between Triggers** to `30` (runs every 30 minutes).
 4. Connect the **Schedule Trigger node** to the **Customer Datastore (n8n Training) node**.
+![schedule trigger](https://github.com/user-attachments/assets/acdf2dee-c0bc-4e58-9a48-ce178548c0b7)
 
 ---
 
