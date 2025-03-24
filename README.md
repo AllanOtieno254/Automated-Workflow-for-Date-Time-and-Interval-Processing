@@ -1,4 +1,4 @@
-![edit fields set node](https://github.com/user-attachments/assets/8e69db21-84a8-4bfc-a2f9-a852b5358e99)![if node](https://github.com/user-attachments/assets/e414ca12-cb5d-4cdd-95c5-9c5e939e8776)# **Automated Workflow for Date, Time, and Interval Processing**
+# **Automated Workflow for Date, Time, and Interval Processing**
 
 ## **Overview**
 This project demonstrates how to build an automated workflow in **n8n** that processes date and time data by adding five days to an input date from a **Customer Datastore** node. The workflow then checks if the calculated date occurs after 1959. If true, it waits for one minute before setting the final output value. The workflow is triggered every 30 minutes.
@@ -44,7 +44,7 @@ This project demonstrates how to build an automated workflow in **n8n** that pro
 5. This step will generate two branches:
    - **True Branch**: If `new-date` is after `1960-01-01`.
    - **False Branch**: If `new-date` is before `1960-01-01`.
-
+![if node](https://github.com/user-attachments/assets/e414ca12-cb5d-4cdd-95c5-9c5e939e8776)
 ---
 
 ### **4️⃣ Add a Wait Node to Delay Processing**
