@@ -1,0 +1,74 @@
+# Date & Time Node
+
+The **Date & Time** node in n8n allows you to manipulate date and time values, convert between different formats, and perform various date-related calculations.
+
+## Timezone Settings
+
+The node relies on the **timezone setting** configured in n8n. The priority order is:
+
+1. **Workflow timezone** (if set in Workflow settings).
+2. **Instance timezone** (default is **America/New York** for self-hosted instances and **GMT** for n8n Cloud users if not detected at signup).
+3. Self-hosted users can change the timezone via **environment variables**.
+4. n8n Cloud admins can modify the timezone in the **Admin dashboard**.
+
+## Working with Date and Time in n8n
+
+In addition to this node, you can work with date and time in:
+- **Code Node** (via JavaScript)
+- **Expressions in any node** (using [Luxon](https://moment.github.io/luxon/#/))
+
+## Supported Operations
+
+The **Date & Time** node provides the following operations:
+
+### 1. Add to a Date
+- **Date to Add To**: Specify the base date.
+- **Time Unit**: Choose from seconds, minutes, hours, days, etc.
+- **Duration**: Specify how much time to add.
+- **Output Field Name**: Define the field to store the result.
+- **Options**: Include input fields.
+
+### 2. Subtract from a Date
+- **Date to Subtract From**: Specify the base date.
+- **Time Unit**: Choose the time unit.
+- **Duration**: Specify the value to subtract.
+- **Output Field Name**: Define the field for the result.
+- **Options**: Include input fields.
+
+### 3. Extract Part of a Date
+- **Date**: Specify the date.
+- **Part**: Choose the part to extract (Year, Month, Day, Hour, etc.).
+- **Output Field Name**: Define the field for the result.
+- **Options**: Include input fields.
+
+### 4. Format a Date
+- **Date**: Specify the date to format.
+- **Format**: Choose from preset options or use Luxon custom format tokens.
+- **Output Field Name**: Define the field for the result.
+- **Options**: Include input fields, specify the original format, or use workflow timezone.
+
+### 5. Get Current Date
+- **Include Current Time**: Option to include time.
+- **Output Field Name**: Define the result field.
+- **Options**: Include input fields, specify timezone.
+
+### 6. Get Time Between Dates
+- **Start Date**: Specify the first date.
+- **End Date**: Specify the second date.
+- **Units**: Choose the units (Seconds, Minutes, Hours, etc.).
+- **Output Field Name**: Define the field for the result.
+- **Options**: Include input fields, output as ISO string.
+
+### 7. Round a Date
+- **Date**: Specify the date to round.
+- **Mode**: Choose whether to round **up** or **down**.
+- **To Nearest**: Select the unit (Year, Month, Week, Day, etc.).
+- **Output Field Name**: Define the field for the result.
+- **Options**: Include input fields.
+
+## Summary
+
+The **Date & Time** node is a powerful tool in n8n for handling various time-based operations. With flexible options for formatting, calculation, and extraction, it helps automate workflows that rely on precise date and time management.
+
+For advanced use, consider integrating Luxon with the **Code Node** to extend date manipulation capabilities further.
+
